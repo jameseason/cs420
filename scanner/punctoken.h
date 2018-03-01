@@ -26,7 +26,7 @@ class PuncToken : public Token
   punc_attr_type get_attribute();
   void set_attribute (punc_attr_type type);
 
-  string *to_string() const;
+  string *to_string();
 
  private:
   punc_attr_type attribute;

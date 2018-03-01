@@ -39,7 +39,7 @@ class KeywordToken : public Token
   void set_attribute(keyword_attr_type attr);
 
   // For debugging only.  Won't be used by lexical analyzer.
-  string *to_string() const;
+  string *to_string();
 
  private:
 

@@ -10,13 +10,13 @@ class IdToken : public Token
 {
  public:
   IdToken();
-  IdToken(const string& attr);
+  IdToken(string *attribute);
   ~IdToken();
 
   string *get_attribute();
-  void set_attribute(const string& attr);
+  void set_attribute(string *attr);
 
-  string *to_string() const;
+  string *to_string();
 
  private:
   string *attribute;

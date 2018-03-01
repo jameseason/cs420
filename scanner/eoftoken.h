@@ -4,19 +4,17 @@
 using namespace std;
 
 #include "token.h"
+#include <string>
 
-// The EofToken has no attributes.
-
-class EofToken : public Token
+class EofToken: public Token
 {
- public:
-  EofToken ();
-  ~EofToken ();
+  public:
+    EofToken();
 
-  string *to_string() const;
+    ~EofToken();
 
+    string* to_string();
 };
 
 #endif
-
   

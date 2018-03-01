@@ -27,7 +27,7 @@ class RelopToken : public Token
 
   void set_attribute(relop_attr_type attr);
 
-  string *to_string() const;
+  string *to_string();
 
  private:
   relop_attr_type attribute;

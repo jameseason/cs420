@@ -10,13 +10,13 @@ class NumToken : public Token
 {
  public:
   NumToken();
-  NumToken(const string& attr);
+  NumToken(string* s);
   ~NumToken();
 
   string *get_attribute();
-  void set_attribute(const string& attr);
+  void set_attribute(const string* attr);
 
-  string *to_string() const;
+  string *to_string();
 
  private:
   string *attribute;

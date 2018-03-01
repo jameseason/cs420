@@ -20,7 +20,7 @@ class MulopToken : public Token{
   mulop_attr_type get_attribute ();
   void set_attribute (mulop_attr_type attr);
 
-  string *to_string() const;
+  string *to_string();
 
  private:
   mulop_attr_type attribute;

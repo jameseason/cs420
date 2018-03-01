@@ -21,7 +21,7 @@ class AddopToken : public Token
   addop_attr_type get_attribute();
   void set_attribute (addop_attr_type attr);
 
-  string *to_string() const;
+  string *to_string();
 
  private:
   addop_attr_type attribute;
