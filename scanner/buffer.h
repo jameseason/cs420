@@ -37,16 +37,22 @@ class Buffer
   
   
  private:
-
-  static const int MAX_BUFFER_SIZE = 1024;
+ 
+ list<char> *buff
+ 
+ static const int MAX_BUFFER_SIZE = 1024;
  
   // The stream object for the source file.
   ifstream source_file;
   
   /* If something catastrophic happens in the buffer, print
      an error message and then call this method to exit. */
-  void buffer_fatal_error() const;
-  
+  void buffer_fatal_error();
+
+  void move_through_comment();
+  void is_accepted_char(char c);
+  void fill_buf();
+  void clear_buff();
   // Useful utility function.  Is c a whitespace char?
   inline bool is_whitespace (const char c)
   {

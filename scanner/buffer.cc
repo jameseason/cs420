@@ -24,7 +24,7 @@ char Buffer::next_char()
     fill_buf();
   }
   char next = *buff->begin();
-  b->pop_front();
+  buff->pop_front();
   return next;
 }
 
@@ -51,7 +51,7 @@ void Buffer::fill_buf()
     {
       if (is_whitespace(c))
       {
-        char buf_c = b->back();
+        char buf_c = buff->back();
         if (!is_whitespace(buf_c))
         {
           buff->push_back(' ');
