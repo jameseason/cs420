@@ -13,7 +13,7 @@ Scanner::~Scanner ()
   delete buf;
 }
 
-Token *Scanner::next_lexemeen()
+Token *Scanner::next_token()
 {
   Token *lexeme = NULL;
   string *attr = new string();
@@ -174,7 +174,7 @@ Token *Scanner::next_lexemeen()
         }
         else
         {
-          scanner_fatal_error( 1 );
+          scanner_fatal_error( "error" );
         }
       case 1:
         if( c == '>' )
@@ -950,6 +950,7 @@ Token *Scanner::next_lexemeen()
         }
     }
   }
+  
   if( lexeme == NULL )
   {
     scanner_fatal_error("lexeme is null");
