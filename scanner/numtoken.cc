@@ -37,6 +37,6 @@ void NumToken::set_attribute( const string* attr )
 string* NumToken::to_string()
 {
   string* s;
-  s = new string("NUMBER " + *attribute );
+  s = new string("NUMBER: " + *attribute );
   return s;
 }

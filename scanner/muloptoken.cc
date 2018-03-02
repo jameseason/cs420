@@ -33,22 +33,22 @@ string* MulopToken::to_string()
   switch( attribute )
   {
     case MULOP_MUL:
-      s = new string( "Multiplication" );
+      s = new string( "MULTIPLICATION" );
       break;
     case MULOP_DIV:
-      s = new string( "Division" );
+      s = new string( "DIVISION" );
       break;
     case MULOP_AND:
-      s = new string( "And Operator " );
+      s = new string( "AND" );
       break;
     case MULOP_NO_ATTR:
       s = new string( "MUL UNDEFINED ATTR" );
       break;
     default:
-      s = new string( "GARBAGE ATTR VAL " );
+      s = new string( "(GARBAGE ATTR VAL)" );
       break;
   }
-  string* result = new string( "MULTIPLICATIVE OPERATOR " + *s );
+  string* result = new string( "MULTIPLICATIVE OPERATOR: " + *s );
   delete s;
   return result;
 }

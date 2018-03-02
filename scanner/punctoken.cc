@@ -46,13 +46,17 @@ string* PuncToken::to_string()
       attribute_name = new string( "ASSIGNMENT" );
       break;
     case PUNC_OPEN:
-      attribute_name = new string( "OPEN PARENTHESE" );
+      attribute_name = new string( "OPEN PAREN" );
       break;
     case PUNC_CLOSE:
-      attribute_name = new string( "CLOSE PARENTHESE" );
+      attribute_name = new string( "CLOSE PAREN" );
       break;
     case PUNC_NO_ATTR:
       attribute_name = new string( "ATTRIBUTE UNDEFINED" );
+      break;
+    default:
+      attribute_name = new string( "(GARBAGE PUNC VAL)" );
+      break;
   }
   string* result = new string( "PUNCTUATION: " + *attribute_name );
   delete attribute_name;

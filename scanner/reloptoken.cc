@@ -33,28 +33,28 @@ string* RelopToken::to_string()
   switch( attribute ) 
   {
     case RELOP_EQ:
-      attribute_name = new string( "Equals" );
+      attribute_name = new string( "EQUALS" );
       break;
     case RELOP_NE:
-      attribute_name = new string( "Not Equals" );
+      attribute_name = new string( "NOT EQUALS" );
       break;
     case RELOP_GT:
-      attribute_name = new string( "Greater than" );
+      attribute_name = new string( "GREATER THAN" );
       break;
     case RELOP_LT: 
-      attribute_name = new string( "Less than" );
+      attribute_name = new string( "LESS THAN" );
       break;
     case RELOP_LE:
-      attribute_name = new string( "Less than or equal" );
+      attribute_name = new string( "LESS THAN OR EQUAL" );
       break;
     case RELOP_GE:
-      attribute_name = new string( "Greater than or equal" );
+      attribute_name = new string( "GREATER THAN OR EQUAL" );
       break;
     case RELOP_NO_ATTR:
       attribute_name = new string( "NO ATTRIBUTE" );
       break;
     default:
-      attribute_name = new string( "GARBAGE ATTRIBUTE VALUE" );
+      attribute_name = new string( "(GARBAGE ATTRIBUTE VALUE)" );
       break;
   }
   

@@ -14,7 +14,7 @@ KeywordToken::KeywordToken (keyword_attr_type attr) : Token()
 
 KeywordToken::~KeywordToken()
 {
-    this->~Token();
+  this->~Token();
 }
 
 keyword_attr_type KeywordToken::get_attribute()
@@ -30,7 +30,6 @@ void KeywordToken::set_attribute(keyword_attr_type attr)
 string *KeywordToken::to_string()
 {
   string *attribute_name;
-
   switch (attribute) {
       case KW_PROGRAM:
         attribute_name = new string ("PROGRAM");
@@ -72,7 +71,7 @@ string *KeywordToken::to_string()
         attribute_name = new string ("NO ATTRIBUTE");
         break;
       default:
-        attribute_name = new string ("GARBAGE ATTRIBUTE VALUE");
+        attribute_name = new string ("(GARBAGE ATTRIBUTE VALUE)");
         break;
   }
 

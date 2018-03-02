@@ -28,61 +28,61 @@ Token *Scanner::next_token()
       case 0:
         if( c == EOF_MARKER )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new EofToken();
           break;
         }
         else if( c == ';' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new PuncToken( PUNC_SEMI );
           break;
         }
         else if( c == ',' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new PuncToken( PUNC_COMMA );
           break;
         }
         else if( c == '(' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new PuncToken( PUNC_OPEN );
           break;
         }
         else if( c == ')' )
         { 
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new PuncToken( PUNC_CLOSE );
           break;
         }
         else if( c == '=' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new RelopToken( RELOP_EQ );
           break;
         }
         else if( c == '+' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new AddopToken( ADDOP_ADD );
           break;
         }
         else if( c == '-' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new AddopToken( ADDOP_SUB );
           break;
         }
         else if( c == '*' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new MulopToken( MULOP_MUL );
           break;
         }
         else if( c == '/' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new MulopToken( MULOP_DIV );
           break;
         }
@@ -179,34 +179,34 @@ Token *Scanner::next_token()
       case 1:
         if( c == '>' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new RelopToken( RELOP_NE );
           break;
         }
         else if( c == '=' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new RelopToken( RELOP_LE );
           break;
         }
         else
         {
           buf->unread_char( c );
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new RelopToken( RELOP_LT );
           break;
         }
       case 2:
         if( c == '=' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new RelopToken( RELOP_GE );
           break;
         }
         else
         {
           buf->unread_char( c );
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new RelopToken( RELOP_GT );
           break;
         }
@@ -240,7 +240,7 @@ Token *Scanner::next_token()
         else
         {
           buf->unread_char( c );
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new IdToken( attr );
           break;
         }
@@ -255,7 +255,7 @@ Token *Scanner::next_token()
         else
         {
           buf->unread_char( c );
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new NumToken( attr );
           break;
         }
@@ -289,7 +289,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_BOOL );
           break; 
         }
@@ -341,7 +341,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_BEGIN ); 
           break;
         }
@@ -386,7 +386,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_END );
           break;
         }
@@ -425,7 +425,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_ELSE );
           break;
         }
@@ -470,7 +470,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_INT );
           break;
         }
@@ -483,7 +483,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_IF );
           break;
         }
@@ -522,7 +522,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_NOT );
           break;
         }
@@ -594,7 +594,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_PRINT );
           break;
         }
@@ -665,7 +665,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_PROGRAM );
           break;
         }
@@ -743,7 +743,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_PROCEDURE );
           break;
         }
@@ -795,7 +795,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_THEN );
           break;
         }
@@ -860,7 +860,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new KeywordToken( KW_WHILE );
           break;
         }
@@ -886,7 +886,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new AddopToken( ADDOP_OR );
           break;
         }
@@ -925,7 +925,7 @@ Token *Scanner::next_token()
         buf->unread_char( c );
         if( !is_alphanum( c ) )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new MulopToken( MULOP_AND );
           break;
         }
@@ -937,14 +937,14 @@ Token *Scanner::next_token()
       case 56:
 	      if( c == '=' )
         {
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new PuncToken( PUNC_ASSIGN );
           break;
         }
         else
         {
           buf->unread_char( c );
-          state = -1;
+          state = EXIT_STATE;
           lexeme = new PuncToken( PUNC_COLON );
 	        break;
         }

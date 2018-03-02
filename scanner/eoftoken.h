@@ -10,9 +10,7 @@ class EofToken: public Token
 {
   public:
     EofToken();
-
     ~EofToken();
-
     string* to_string();
 };
 

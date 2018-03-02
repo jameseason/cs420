@@ -48,12 +48,10 @@ class Buffer
   /* If something catastrophic happens in the buffer, print
      an error message and then call this method to exit. */
   void buffer_fatal_error();
-
   void move_through_comment();
   bool is_accepted_char(char c);
   void fill_buf();
-  void clear_buff();
-  // Useful utility function.  Is c a whitespace char?
+  
   inline bool is_whitespace (const char c)
   {
     return (c == SPACE || c == TAB || c == NEW_LINE);
@@ -72,6 +70,7 @@ class Buffer
   {
     return (is_alpha(c) || is_digit(c) );
   }
+  
   inline bool is_acceptedsymbol( char c )
   {
     return (c==';' || c==':' || c=='(' || c==')'
@@ -79,8 +78,6 @@ class Buffer
             || c=='+' || c=='-' || c=='*' || c=='/' 
             || c=='#');
   }
-  // Probably some other stuff too.
-  
 };
 
 #endif

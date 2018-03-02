@@ -44,8 +44,8 @@ void Buffer::unread_char( char c )
 void Buffer::fill_buf()
 {
   char c;
-  int bufloc = 0;
-  while (bufloc < MAX_BUFFER_SIZE)
+  int count = 0;
+  while (count < MAX_BUFFER_SIZE)
   {
     c = source_file.get();
     if (!source_file.eof())
@@ -77,9 +77,9 @@ void Buffer::fill_buf()
     else
     {
       buff->push_back(EOF_MARKER);
-      bufloc = MAX_BUFFER_SIZE;
+      count = MAX_BUFFER_SIZE;
     }
-    bufloc++;
+    count++;
   }
 }
 
@@ -96,14 +96,6 @@ void Buffer::move_through_comment()
 bool Buffer::is_accepted_char(char c)
 {
   return is_alphanumeric(c) || is_acceptedsymbol(c);
-}
-
-void Buffer::clear_buff()
-{
-  while(!buff->empty())
-  {
-    buff->pop_front();
-  }
 }
 
 void Buffer::buffer_fatal_error()

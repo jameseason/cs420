@@ -3,7 +3,7 @@
 IdToken::IdToken():Token()
 {
   set_token_type (TOKEN_ID);
-  attribute = new string("UNINITIALIZED IDENTIFIER ATTRIBUTE");
+  attribute = new string("UNINITIALIZED IDENTIFIER ATTR");
 }
 
 IdToken::IdToken (string *attr):Token()
@@ -29,7 +29,8 @@ string *IdToken::get_attribute()
 
 void IdToken::set_attribute(string *attr)
 { 
-  if (attribute != NULL) {
+  if (attribute != NULL) 
+  {
     delete attribute;
   }
   attribute = new string (*attr);
@@ -38,6 +39,6 @@ void IdToken::set_attribute(string *attr)
 
 string *IdToken::to_string()
 {
-  string *attribute_name = new string ("IDENTIFIER " + *attribute);
+  string *attribute_name = new string ("IDENTIFIER: " + *attribute);
   return attribute_name;
 }

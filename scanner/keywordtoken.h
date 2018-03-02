@@ -29,7 +29,7 @@ class KeywordToken : public Token
 
   ~KeywordToken();
 
-  // Construct a keywork token with an attribute.
+  // Construct a keyword token with an attribute.
   KeywordToken(keyword_attr_type attr);
 
   // Return the attribute of this token

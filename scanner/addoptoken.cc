@@ -33,23 +33,23 @@ string* AddopToken::to_string()
   switch( attribute )
   {
     case ADDOP_ADD:
-      s = new string( "Addition" );
+      s = new string( "ADDITION" );
       break;
     case ADDOP_SUB:
-      s = new string( "Subtraction" );
+      s = new string( "SUBTRACTION" );
       break;
     case ADDOP_OR: 
-      s = new string( "OR Operation" );
+      s = new string( "OR" );
       break;
     case ADDOP_NO_ATTR:
       s = new string( "UNDEFINED ATTRIBUTE" );
       break;
     default:  
-      s = new string( "GARBAGE ATTR VAL" );
+      s = new string( "(GARBAGE ATTR VAL)" );
       break;
   }
 
-  string* result = new string( "ADDITIVE OPERATOR " + *s );
+  string* result = new string( "ADDITIVE OPERATOR: " + *s );
   delete s;
   return result;
 }
