@@ -23,7 +23,7 @@ IdToken::~IdToken()
 
 string *IdToken::get_attribute()
 {
-  return attribute
+  return attribute;
 }
 
 

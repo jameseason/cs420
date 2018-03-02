@@ -180,7 +180,7 @@ Token *Scanner::next_token()
         if( c == '>' )
         {
           state = -1;
-          lexeme = new RelopToken( RELOP_NEQ );
+          lexeme = new RelopToken( RELOP_NE );
           break;
         }
         else if( c == '=' )

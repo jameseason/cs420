@@ -49,5 +49,6 @@ string* MulopToken::to_string()
       break;
   }
   string* result = new string( "MULTIPLICATIVE OPERATOR " + *s );
+  delete s;
   return result;
 }

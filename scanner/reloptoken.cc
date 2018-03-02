@@ -35,7 +35,7 @@ string* RelopToken::to_string()
     case RELOP_EQ:
       attribute_name = new string( "Equals" );
       break;
-    case RELOP_NEQ:
+    case RELOP_NE:
       attribute_name = new string( "Not Equals" );
       break;
     case RELOP_GT:
@@ -59,5 +59,6 @@ string* RelopToken::to_string()
   }
   
   string* result = new string( "RELATIONAL OPERATOR: " + *attribute_name );
+  delete attribute_name;
   return result;
 } 

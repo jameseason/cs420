@@ -50,5 +50,6 @@ string* AddopToken::to_string()
   }
 
   string* result = new string( "ADDITIVE OPERATOR " + *s );
+  delete s;
   return result;
 }

@@ -47,9 +47,7 @@ class Token
      function will be called, even if we reference the object
      through a base (super) class object.
   */
-  virtual string *to_string() const {
-    return NULL;
-  }
+  virtual string *to_string() = 0;
 
   // Set the token type.
   void set_token_type (token_type_type type);

@@ -7,7 +7,7 @@ EofToken::EofToken():Token()
 
 EofToken::~EofToken() 
 {
-  this->~Token()
+  this->~Token();
 }
 
 string* EofToken::to_string()

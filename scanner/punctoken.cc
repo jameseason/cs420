@@ -55,5 +55,6 @@ string* PuncToken::to_string()
       attribute_name = new string( "ATTRIBUTE UNDEFINED" );
   }
   string* result = new string( "PUNCTUATION: " + *attribute_name );
+  delete attribute_name;
   return result;
 }

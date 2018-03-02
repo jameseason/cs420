@@ -38,7 +38,7 @@ class Buffer
   
  private:
  
- list<char> *buff
+  list<char> *buff;
  
  static const int MAX_BUFFER_SIZE = 1024;
  
@@ -50,7 +50,7 @@ class Buffer
   void buffer_fatal_error();
 
   void move_through_comment();
-  void is_accepted_char(char c);
+  bool is_accepted_char(char c);
   void fill_buf();
   void clear_buff();
   // Useful utility function.  Is c a whitespace char?
@@ -58,7 +58,27 @@ class Buffer
   {
     return (c == SPACE || c == TAB || c == NEW_LINE);
   }
-  
+  inline bool is_alpha (char c)
+  {
+    return (c >= 'a' && c <= 'z');
+  }
+
+  inline bool is_digit (char c)
+  {
+    return (c >= '0' && c <= '9');
+  }
+
+  inline bool is_alphanumeric (char c)
+  {
+    return (is_alpha(c) || is_digit(c) );
+  }
+  inline bool is_acceptedsymbol( char c )
+  {
+    return (c==';' || c==':' || c=='(' || c==')'
+            || c==',' || c=='=' || c=='<' ||c=='>'
+            || c=='+' || c=='-' || c=='*' || c=='/' 
+            || c=='#');
+  }
   // Probably some other stuff too.
   
 };

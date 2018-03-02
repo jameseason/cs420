@@ -77,5 +77,6 @@ string *KeywordToken::to_string()
   }
 
   string *result = new string("KEYWORD: " + *attribute_name);
+  delete attribute_name;
   return result;
 }

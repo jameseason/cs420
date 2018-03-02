@@ -15,6 +15,7 @@ Buffer::Buffer (char *filename)
 Buffer::~Buffer()
 {
   source_file.close();
+  delete buff;
 }
 
 char Buffer::next_char()
@@ -46,8 +47,8 @@ void Buffer::fill_buf()
   int bufloc = 0;
   while (bufloc < MAX_BUFFER_SIZE)
   {
-    c = source_file->get();
-    if (!source_file->eof())
+    c = source_file.get();
+    if (!source_file.eof())
     {
       if (is_whitespace(c))
       {
@@ -85,10 +86,10 @@ void Buffer::fill_buf()
 void Buffer::move_through_comment()
 {
   char contents;
-  contents = source_file->get();
+  contents = source_file.get();
   while(contents != '\n')
   {
-    contents = source_file->get();
+    contents = source_file.get();
   }
 }
 
@@ -105,7 +106,7 @@ void Buffer::clear_buff()
   }
 }
 
-void Buffer::buffer_fatal_error() const
+void Buffer::buffer_fatal_error()
 {
   cerr << "Exiting on BUFFER FATAL ERROR" << endl;
   exit (-1);
